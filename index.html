@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Preguntas</title>
+    <script defer src="script.js"></script>
+    
+    <!-- Enlace al manifest.json -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon para la pestaña del navegador -->
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    
+    <!-- Definir el tema de la aplicación en Android -->
+    <meta name="theme-color" content="#2196f3">
+    
+    <!-- Agregar íconos de Apple para iPad/iPhone -->
+    <link rel="apple-touch-icon" href="apple-icon-180x180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Aws-Prof">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .pregunta {
+            padding: 20px;
+            border-radius: 10px;
+            background: #ecf0f1;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .opcion {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #dfe6e9;
+            transition: background 0.3s, transform 0.2s;
+            text-align: left;
+        }
+        .opcion input {
+            margin-right: 10px;
+        }
+        .opcion:hover {
+            background: #b2bec3;
+            transform: scale(1.02);
+        }
+        .seleccionada {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        .respuesta-correcta {
+            background-color: #2ecc71;
+        }
+        .respuesta-incorrecta {
+            background-color: #e74c3c;
+        }
+        .pagina-control {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        #anterior {
+            background: #bdc3c7;
+        }
+        #siguiente {
+            background: #3498db;
+            color: white;
+        }
+        #siguiente:hover {
+            background: #2980b9;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                padding: 15px;
+            }
+            .opcion {
+                padding: 12px;
+                margin: 22px 0;
+            }
+            button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cuestionario</h1>
+        <div id="contenedor-preguntas"></div>
+        <div class="pagina-control">
+            <button id="anterior" disabled>Anterior</button>
+            <span id="pagina-info"></span>
+            <button id="siguiente">Siguiente</button>
+        </div>
+    </div>
+</body>
+</html>
